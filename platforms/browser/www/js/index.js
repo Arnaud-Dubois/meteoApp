@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,6 +35,25 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+
+        navigator.splashscreen.show();
+
+
+        // Calculate the date
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+
+        today = mm + '/' + dd + '/' + yyyy;
 
         /*
         ***********************************************************************
@@ -104,7 +125,7 @@ var app = {
             + latitude + '&lon=' + longitude + '&appid=' + OpenWeatherAppKey + '&units=metric';
 
             // var col = $('#card--col');
-            var col = $('.card--col');
+            var col = $('.page__background');
 
             var emot = $('#emot');
 
@@ -128,12 +149,14 @@ var app = {
                             // alert('Humidity = ' + results.main.humidity)
                             // alert('Visibility = ' + results.weather[0].main)
 
-                            $('#description').text(results.name);
-                            $('#temp').text('Température = ' + results.main.temp);
-                            $('#wind').text('Vent = ' + results.wind.speed);
-                            $('#humidity').text('Humidité = ' + results.main.humidity);
-                            $('#visibility').text('Visibilité = ' + results.weather[0].main);
 
+                            $('#description').text(results.name);
+                            $('#temp').text(results.main.temp + '°');
+                            $('#wind').text(results.wind.speed + 'm/s');
+                            $('#humidity').text(results.main.humidity + '%');
+                            $('#visibility').text(results.weather[0].main);
+                            $('#date').text(today);
+                            $('#pressure').text(results.main.humidity);
 
                             var sunriseDate = new Date(results.sys.sunrise);
                             $('#sunrise').text(sunriseDate.toLocaleTimeString());
@@ -146,8 +169,8 @@ var app = {
 
                             // Change GFX based on the WEATHER
 
-                            // Testing the weather modss
-                            // results.weather[0].main = 'Cold'
+                            // Testing the weather mods
+                            // results.weather[0].main = 'Rain'
                             // 
 
                             switch(results.weather[0].main) {
@@ -170,7 +193,7 @@ var app = {
                                     break;
                                 case 'Clear':
                                     col.addClass("sun");
-                                    emot.html('<img style="display:block;margin:0 auto;" src="res/chibi-cloud.svg" alt="chibi-cloud" width="200" height="140"></img>');
+                                    emot.html('<img style="display:block;margin:0 auto;position:absolute;top:18%;left:-5%;" src="res/chibi-sun.svg" alt="chibi-sun" width="400" height="280"></img>');
                                     break;
                                 case 'Fog':
                                     col.addClass("clouds");
@@ -180,7 +203,8 @@ var app = {
                                     col.addClass("rain");
                             }
 
-
+                            // Deactivate Splashscreen
+                            navigator.splashscreen.hide();
                         }
 
                     });
