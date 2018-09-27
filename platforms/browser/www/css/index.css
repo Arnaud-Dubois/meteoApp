@@ -133,16 +133,17 @@ h1 {
 }
 
 p {
-    font-size: 24px; 
+    font-size: 20px; 
 }
 
 h3 {
-    
+    font-weight: normal;
     line-height: 0px;
 }
 
 #temp {
     font-size: 56px;
+    letter-spacing: -5px;
 }
 
 #description {
@@ -158,25 +159,86 @@ h3 {
     position: relative;
 }
 
-/*CSS ANIMATIONS*/
+#wind, #humidity, #pressure {
+    text-transform: lowercase;
+}
+
+/*CSS ANIMATIONS WITH SVG*/
+
+#mountains-gfx {
+    position:absolute;
+    top: 10%;
+    left: 0;
+    z-index: -111;
+}
+
 
 #clouds-gfx {
-    animation: cloudsMov 12s linear forwards infinite;
+    z-index: 11;
+    animation: cloudsMov 16s linear forwards infinite;
+}
+
+#clouds-gfx-2 {
+    z-index: -11;
+    animation: cloudsMov 22s linear forwards infinite;
+
+    position: absolute;
+    top: 30%;
+    
+    width: 50%;
+    height: 50%;
+}
+
+#clouds-gfx, #clouds-gfx-2 {
+
+}
+
+#clouds-gfx-2 path {
+    fill: rgba(255,255,255,0.5);
+}
+
+
+/*TEST TEST TEST TEST*/
+img {
+    z-index: 1;
+    animation: idle 2.8s ease infinite;
+}
+
+
+/*TEST TEST TEST TEST*/
+
+        
+@keyframes idle {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(10deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 
 @keyframes cloudsMov {
     from {
-        transform: translateX(250px)
+        transform: translateX(350px)
     }
     to {
-        transform: translateX(-250px)
+        transform: translateX(-430px)
     }
 
 }
 
 
 /*LET'S GET HACKING*/
+
+
+
 
 .page__background {
     /*background-color: limegreen!important;*/

@@ -150,13 +150,14 @@ var app = {
                             // alert('Visibility = ' + results.weather[0].main)
 
 
+
                             $('#description').text(results.name);
-                            $('#temp').text(results.main.temp + '°');
+                            $('#temp').text(Math.floor(results.main.temp) + '°');
                             $('#wind').text(results.wind.speed + 'm/s');
                             $('#humidity').text(results.main.humidity + '%');
                             $('#visibility').text(results.weather[0].main);
                             $('#date').text(today);
-                            $('#pressure').text(results.main.humidity);
+                            $('#pressure').text(results.main.pressure + 'hPa');
 
                             var sunriseDate = new Date(results.sys.sunrise);
                             $('#sunrise').text(sunriseDate.toLocaleTimeString());

@@ -55,22 +55,7 @@
         .clouds {color:rosybrown!important;background-image: linear-gradient(200deg, rgba(135,133,255), rgba(41,150,255));}
         .cold {color:cyan!important;background-image: linear-gradient(200deg, rgba(135,133,255), rgba(41,150,255));}
         
-        img {
-            animation: idle 1s ease-in-out infinite;
-        }
         
-        
-        @keyframes idle {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -86,7 +71,7 @@
     <ons-navigator  swipeable id="myNavigator" page="page1.html"></ons-navigator>
     
     <template id="page1.html" >
-        <ons-page id="page1" style="overflow:hidden;">
+        <ons-page id="page1">
             <!--
                 <ons-toolbar>
                     <div id="card--col" class="center card--col">Meteo</div>
@@ -149,7 +134,17 @@
             </section>
 
                 <!-- Clouds GFX -->
+                <!-- 1 -->
                 <svg version="1.1" id="clouds-gfx" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="248.227px" height="156.738px" viewBox="0 0 248.227 156.738" enable-background="new 0 0 248.227 156.738"
+                xml:space="preserve">
+                <path fill="#FFFFFF" d="M177.531,35.657c-12.473-16.93-32.539-27.92-55.18-27.92c-34.331,0-62.76,25.257-67.729,58.203
+                    C26.058,73.279,6.517,88.159,6.517,105.321c0,24.439,39.623,44.25,88.5,44.25c23.54,0,44.932-4.596,60.785-12.091
+                    c2.483,0.168,5.001,0.257,7.549,0.257c41.697,0,75.5-23.057,75.5-51.5C238.851,61.102,212.447,40.185,177.531,35.657z"/>
+                </svg>
+
+                <!-- 2 -->
+                <svg version="1.1" id="clouds-gfx-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 width="248.227px" height="156.738px" viewBox="0 0 248.227 156.738" enable-background="new 0 0 248.227 156.738"
                 xml:space="preserve">
                 <path fill="#FFFFFF" d="M177.531,35.657c-12.473-16.93-32.539-27.92-55.18-27.92c-34.331,0-62.76,25.257-67.729,58.203
@@ -159,13 +154,20 @@
 
 
                 <!-- Mountains GFX -->
+                <svg id="mountains-gfx" x="0px" y="0px"
+                width="360px" height="869px" viewBox="0 0 320 339">
+                <path fill="#1F6BFF" d="M75.167,109.667c0,0,127-66,196.5-90c35.919-12.403,97,64.5,125,64.5s14.684,16.319,41.503,33.5
+                c37.05,23.734,7.405,63,16.405,63s1,90,1,90l-322.408,20L75.167,109.667z"/>
+                <path fill="#1F54FF" d="M-154.5,138c0,0,80-56,80-94s116,60,144,60s88,69,132,69s187,36,196,36s1,90,1,90l-495,20L-154.5,138z"/>
+                </svg>
+<!--
                 <svg version="1.1" id="mountains-gfx" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 width="360px" height="869px" viewBox="0 0 320 339" enable-background="new 0 0 320 339" xml:space="preserve">
                 <path fill="#1F6BFF" d="M75.167,109.667c0,0,127-66,196.5-90c35.919-12.403,97,64.5,125,64.5s14.684,16.319,41.503,33.5
                 c37.05,23.734,7.405,63,16.405,63s1,90,1,90l-322.408,20L75.167,109.667z"/>
                 <path fill="#1F54FF" d="M-154.5,138c0,0,80-56,80-94s116,60,144,60s88,69,132,69s187,36,196,36s1,90,1,90l-495,20L-154.5,138z"/>
                 </svg>
-        
+ -->        
     </ons-page>
 </template>
 
