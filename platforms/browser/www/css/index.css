@@ -36,12 +36,14 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    /* font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif; */
+    font-family: 'Quattrocento Sans', sans-serif;
+    color:white;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    text-transform:initial;
     width:100%;
 }
 
@@ -70,8 +72,9 @@ body {
 }
 
 h1 {
-    font-size:24px;
+    font-size:36px;
     font-weight:normal;
+    letter-spacing: 5px;
     margin:0px;
     overflow:visible;
     padding:0px;
@@ -112,4 +115,69 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+/*CUSTOM CSS*/
+
+h1, h2, h3, p {
+    margin:0;
+    padding:0;
+    color: white;
+    font-family: 'Quattrocento Sans', sans-serif;
+    text-transform:uppercase;
+    vertical-align: top;
+}
+
+h1 {
+    font-size:38px!important;
+}
+
+p {
+    font-size: 24px; 
+}
+
+h3 {
+    
+    line-height: 0px;
+}
+
+#temp {
+    font-size: 56px;
+}
+
+#description {
+    font-size: 18px;
+    letter-spacing: 3px;
+    /* background-color: pink; */
+}
+
+#date {
+    letter-spacing: 5px;
+    /* background-color: cadetblue; */
+    top:-10px;
+    position: relative;
+}
+
+/*CSS ANIMATIONS*/
+
+#clouds-gfx {
+    animation: cloudsMov 12s linear forwards infinite;
+}
+
+
+@keyframes cloudsMov {
+    from {
+        transform: translateX(250px)
+    }
+    to {
+        transform: translateX(-250px)
+    }
+
+}
+
+
+/*LET'S GET HACKING*/
+
+.page__background {
+    /*background-color: limegreen!important;*/
 }
