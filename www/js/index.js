@@ -171,7 +171,7 @@ var app = {
                             // Change GFX based on the WEATHER
 
                             // Testing the weather mods
-                            // results.weather[0].main = 'Rain'
+                            // results.weather[0].main = 'Sun'
                             // 
 
                             switch(results.weather[0].main) {
@@ -202,6 +202,7 @@ var app = {
                                     break;
                                 default:
                                     col.addClass("rain");
+                                    emot.html('<img style="display:block;margin:0 auto;" src="res/chibi-cloud.svg" alt="chibi-cloud" width="200" height="140"></img>');
                             }
 
                             // Deactivate Splashscreen

@@ -166,8 +166,8 @@ h3 {
 /*CSS ANIMATIONS WITH SVG*/
 
 #mountains-gfx {
-    position:absolute;
-    top: 10%;
+    position:relative;
+    bottom: 20%;
     left: 0;
     z-index: -111;
 }
@@ -176,6 +176,9 @@ h3 {
 #clouds-gfx {
     z-index: 11;
     animation: cloudsMov 16s linear forwards infinite;
+
+    position: absolute;
+    top: 30%;
 }
 
 #clouds-gfx-2 {
@@ -183,7 +186,7 @@ h3 {
     animation: cloudsMov 22s linear forwards infinite;
 
     position: absolute;
-    top: 30%;
+    top: 50%;
     
     width: 50%;
     height: 50%;
