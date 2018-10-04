@@ -60,7 +60,13 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
-
+.content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;   
+}
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -241,6 +247,11 @@ img {
 /*LET'S GET HACKING*/
 
 
+/*Hack on Onsen UI page*/
+.page__content {
+    width:360px;
+    overflow-x: hidden!important;
+}
 
 
 .page__background {

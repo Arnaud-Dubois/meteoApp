@@ -37,14 +37,14 @@ var app = {
     onDeviceReady: function() {
 
         navigator.splashscreen.show();
-
-
+        var w = window.innerWidth;
+        $('.content').css("width",w+"px");
         // Calculate the date
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
-
+        w = window.innerWidth;
         if(dd<10) {
             dd = '0'+dd
         } 
